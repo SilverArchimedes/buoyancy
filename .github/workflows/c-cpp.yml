@@ -17,10 +17,12 @@ jobs:
       run: ls
     - name: make
       run: mkdir build
+    - name: make
+      run: ls
     - name: make check
       run: cd build
     - name: make distcheck
-      run: cmake ..
+      run: cmake ./..
     - name: make distcheck
       run: make
     - name: make distcheck
