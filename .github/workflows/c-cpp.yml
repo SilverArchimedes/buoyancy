@@ -20,4 +20,8 @@ jobs:
     - name: make check
       run: cd build
     - name: make distcheck
-      run: make ..
+      run: cmake ..
+    - name: make distcheck
+      run: make
+    - name: make distcheck
+      run: ./hello
