@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/workflows/main
     - name: configure
       run: ls
     - name: make
