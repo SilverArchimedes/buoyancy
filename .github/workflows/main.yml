@@ -26,4 +26,4 @@ jobs:
         - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
     steps:
       - run: (cd /home/jyy/catkin_ws)
-      - run: (catkin build)
+      - run: (ls)
