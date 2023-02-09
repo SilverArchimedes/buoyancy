@@ -18,7 +18,7 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: hello
-        uses: docker-hello-action/hello-world-docker-action@main
+        uses: SilverArchimedes/docker-hello-action@main
         with:
              who-to-greet: 'Mona the Octocat'
       
