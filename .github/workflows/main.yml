@@ -8,6 +8,7 @@ jobs:
       - run: (ls /home/runner/work/buoyancy/buoyancy)
       - name: Checkout
         uses: actions/checkout@v3
+      - run: (ls /home/runner/work/buoyancy/buoyancy)
   container-job:
     needs: job1
     # Containers must run in Linux based operating systems
