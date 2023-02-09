@@ -24,3 +24,6 @@ jobs:
       rosx:
         # Docker Hub image
         image: jiayy2/ubuntu16.04-ros-kinetic-base:v1
+    steps:
+      -
+        run: ls
