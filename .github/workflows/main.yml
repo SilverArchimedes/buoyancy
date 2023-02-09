@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
     container:
-      image: jiayy2/ubuntu16.04-ros-kinetic-base:v1
+      image: jiayy2/nx_image:v1
       credentials:
          username: ${{ secrets.DOCKERHUB_USERNAME }}
          password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -19,12 +19,11 @@ jobs:
       ports:
         - 80
       volumes:
-        - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
+        - /home/runner/work/buoyancy/buoyancy:/home/ros2/src
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - run: |
-             cd /home/jyy/catkin_ws/
-             source /opt/ros/kinetic/setup.bash
-             catkin build
-      - run: pwd
+             cd /home/ros2
+             source /opt/ros2/galactic/setup.bash
+             # colcon build
