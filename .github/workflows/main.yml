@@ -7,7 +7,8 @@ defaults:
 jobs:
   container-job:
     # Containers must run in Linux based operating systems
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    #ubuntu-latest
     # Docker Hub image that `container-job` executes in
     container:
       image: jiayy2/nx_image:v1
