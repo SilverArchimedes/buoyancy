@@ -12,4 +12,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: docker pull jiayy2/ubuntu16.04-ros-kinetic-base:v1
-      - run: docker run -it --name="ros" jiayy2/ubuntu16.04-ros-kinetic-base:v2.1 bash -c "cd /home && ./a.sh"
+    # Label of the container job
+  container-job:
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+    # Docker Hub image that `container-job` executes in
+    container: ros
+    # Service containers to run with `container-job`
+    services:
+      # Label used to access the service container
+      rosx:
+        # Docker Hub image
+        image: jiayy2/ubuntu16.04-ros-kinetic-base:v1
