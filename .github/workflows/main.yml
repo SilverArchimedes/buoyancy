@@ -11,11 +11,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-  # Label of the container job
-  container-job:
-    # Containers must run in Linux based operating systems
-    runs-on: ubuntu-latest
-    # Docker Hub image that `container-job` executes in
     container: test
     # Service containers to run with `container-job`
     services:
@@ -23,7 +18,5 @@ jobs:
       redis:
         # Docker Hub image
         image: jiayy2/ubuntu16.04-ros-kinetic-base:v1
-    steps:
-      - run: echo "abc"
 
       
