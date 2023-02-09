@@ -24,7 +24,8 @@ jobs:
       ports:
         - 80
       volumes:
-        - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
+        # - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
+        - /home/jyy/catkin_ws/src:/home/runner/work/buoyancy/buoyancy
     steps:
       - run: (ls /home/jyy/catkin_ws/src)
       - run: (ls /home/jyy/catkin_ws/src)
