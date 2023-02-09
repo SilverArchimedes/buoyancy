@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
     container:
-      image: jiayy2/ubuntu16.04-ros-kinetic-base:v2.1
+      image: jiayy2/ubuntu16.04-ros-kinetic-base:v1
       credentials:
          username: ${{ secrets.DOCKERHUB_USERNAME }}
          password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -23,7 +23,7 @@ jobs:
       ports:
         - 80
       volumes:
-        - my_docker_volume:/volume_mount
+        - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
     steps:
-      - run: (ls /home)
-      - run: (/home/a.sh)
+      - run: (cd /home/jyy/catkin_ws)
+      - run: (catkin build)
