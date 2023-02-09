@@ -24,6 +24,6 @@ jobs:
       # Label used to access the service container
       rosx:
         # Docker Hub image
-        image: jiayy2/ubuntu16.04-ros-kinetic-base:v1
+        image: jiayy2/ubuntu16.04-ros-kinetic-base:v2.1
     steps:
-      - run: cat /proc/version 
+      - run: cat /home/a.sh
