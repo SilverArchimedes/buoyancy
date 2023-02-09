@@ -2,13 +2,6 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - run: (ls /home/runner/work/buoyancy/buoyancy)
-      - name: Checkout
-        uses: actions/checkout@v3
-      - run: (ls /home/runner/work/buoyancy/buoyancy)
   container-job:
     needs: job1
     # Containers must run in Linux based operating systems
@@ -26,5 +19,6 @@ jobs:
       volumes:
         - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
     steps:
-      - run: (ls /home/jyy/catkin_ws/src)
-      - run: (ls /home/jyy/catkin_ws/src)
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: (cd /home/jyy/catkin_ws/ && catkin build)
