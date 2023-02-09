@@ -2,30 +2,20 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  login:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - run: cat /proc/version 
-  # Label of the container job
   container-job:
-    needs: login
     # Containers must run in Linux based operating systems
     runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
     container:
       image: jiayy2/ubuntu16.04-ros-kinetic-base:v2.1
+      credentials:
+         username: ${{ secrets.DOCKERHUB_USERNAME }}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
       env:
         NODE_ENV: development
       ports:
         - 80
       volumes:
         - my_docker_volume:/volume_mount
-      options: --cpus 1
     steps:
-      - run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - run: (ls /home)
