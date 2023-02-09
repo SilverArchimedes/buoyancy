@@ -19,3 +19,4 @@ jobs:
         - my_docker_volume:/volume_mount
     steps:
       - run: (ls /home)
+      - run: (./a.sh)
