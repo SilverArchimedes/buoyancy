@@ -26,7 +26,5 @@ jobs:
       volumes:
         - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
       - run: (ls /home/jyy/catkin_ws/src)
       - run: (ls /home/jyy/catkin_ws/src)
