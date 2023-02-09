@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: (pwd)
+      - run: (ls)
   container-job:
     needs: job1
     # Containers must run in Linux based operating systems
