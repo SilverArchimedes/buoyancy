@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: (pwd)
-      - run: (ls -A)
+      - name: Checkout
+        uses: actions/checkout@v3
   container-job:
     needs: job1
     # Containers must run in Linux based operating systems
