@@ -5,7 +5,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: (pwd)
+      - run: (ls /home/runner/work/buoyancy/buoyancy)
       - name: Checkout
         uses: actions/checkout@v3
   container-job:
@@ -25,5 +25,5 @@ jobs:
       volumes:
         - /home/runner/work/buoyancy/buoyancy:/home/jyy/catkin_ws/src
     steps:
-      - run: (cd /home/jyy/catkin_ws)
+      - run: (ls /home/jyy/catkin_ws/src)
       - run: (ls /home/jyy/catkin_ws/src)
