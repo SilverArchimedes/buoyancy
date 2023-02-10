@@ -20,6 +20,7 @@ jobs:
       - run: |
              docker pull jiayy2/nx_image:v1
              docker run -i -v /home/runner/work/buoyancy/buoyancy:/home/ros2/src jiayy2/nx_image:v1 bash -c \
-             "cd /home/ros2 && source /opt/ros2/galactic/setup.bash && colcon build --packages-select cpp_pubsub \
-             colcon test --event-handlers console_cohesion+ --return-code-on-test-failure --packages-select cpp_pubsub"
+             "cd /home/ros2 && source /opt/ros2/galactic/setup.bash \
+              && colcon build --packages-select cpp_pubsub \
+              && colcon test --event-handlers console_cohesion+ --return-code-on-test-failure --packages-select cpp_pubsub"
              # colcon build
