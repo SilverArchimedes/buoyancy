@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-             apt install -y qemu-user-static binfmt-support
+             sudo apt install -y qemu-user-static binfmt-support
   container-job:
     needs: job1
     # Containers must run in Linux based operating systems
