@@ -5,9 +5,15 @@ defaults:
   run:
     shell: bash
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+             apt install -y qemu-user-static binfmt-support
   container-job:
+    needs: job1
     # Containers must run in Linux based operating systems
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     # Docker Hub image that `container-job` executes in
     container:
       image: jiayy2/nx_image:v1
