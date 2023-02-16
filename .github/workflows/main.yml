@@ -26,4 +26,4 @@ jobs:
              "cd /home/ros2 && source /opt/ros2/galactic/setup.bash \
               && colcon build --packages-select cpp_pubsub \
               && colcon test --event-handlers console_cohesion+ --return-code-on-test-failure --packages-select cpp_pubsub"
-             # colcon build
+             # colcon build test
